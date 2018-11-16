@@ -1,0 +1,9 @@
+*.suo
+*.user
+
+*.vs
+
+bin/
+obj/
+Corky/Corky/App.config
+Corky/packages
