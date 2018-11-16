@@ -16,8 +16,12 @@
 			<RowDefinition Height="Auto" />
 		</Grid.RowDefinitions>
 
-		<Image Margin="12,12,16,71" Name="imgPhoto"
-		       Stretch="Uniform" Grid.Column="0" Grid.Row="0" />
+		<Grid Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top">
+			<Image Margin="12,12,16,71" Name="imgPhoto"
+			       Stretch="Uniform" />
+			<Grid Name="imgGrid" HorizontalAlignment="Left" VerticalAlignment="Top" />
+		</Grid>
+
 		<Button Height="23" HorizontalAlignment="Left"
 		        Margin="12,0,0,34" Name="btnLoad" VerticalAlignment="Bottom"
 		        Grid.Column="0" Grid.Row="1" Click="btnLoad_Click">
@@ -26,6 +30,5 @@
 
 		<Image Source="{Binding WineImageUri}" Grid.Column="1" Grid.Row="0" />
 
-		<Grid Name="imgGrid" Grid.Column="0" Grid.Row="0" />
 	</Grid>
 </Window>

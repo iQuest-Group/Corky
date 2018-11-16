@@ -10,7 +10,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 using CustomVision;
 
@@ -119,7 +118,7 @@ namespace CorkyWpfApp
 			{
 				foreach (Prediction prediction in predictions)
 				{
-					Rectangle rectangle = CalculateRectangle(prediction.BoundingBox);
+					Border rectangle = CalculateRectangle(prediction.BoundingBox);
 					this.imgGrid.Children.Add(rectangle);
 				}
 			}
@@ -130,19 +129,20 @@ namespace CorkyWpfApp
 			}
 		}
 
-		private Rectangle CalculateRectangle(BoundingBox boundingBox)
+		private Border CalculateRectangle(BoundingBox boundingBox)
 		{
-			var rectangle = new Rectangle
+			var left = (int)(boundingBox.Left * this.imgPhoto.ActualWidth);
+			var top = (int)(boundingBox.Top * this.imgPhoto.ActualHeight);
+			var rectangle = new Border
 			{
 				Width = (int)(boundingBox.Width * this.imgPhoto.ActualWidth),
-				Height = (int)(boundingBox.Height * this.imgPhoto.ActualHeight)
+				Height = (int)(boundingBox.Height * this.imgPhoto.ActualHeight),
+				Margin = new Thickness(left, top, 0, 0),
+				BorderThickness = new Thickness(2),
+				BorderBrush = new SolidColorBrush { Color = Colors.Aquamarine },
+				HorizontalAlignment = HorizontalAlignment.Left,
+				VerticalAlignment = VerticalAlignment.Top
 			};
-			Canvas.SetLeft(rectangle, (int)(boundingBox.Left * this.imgPhoto.ActualWidth));
-			Canvas.SetTop(rectangle, (int)(boundingBox.Top * this.imgPhoto.ActualHeight));
-
-			var blackBrush = new SolidColorBrush { Color = Colors.Aquamarine };
-			rectangle.StrokeThickness = 2;
-			rectangle.Stroke = blackBrush;
 
 			return rectangle;
 		}
