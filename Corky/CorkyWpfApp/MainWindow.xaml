@@ -5,17 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CorkyWpfApp"
         mc:Ignorable="d"
-        Title="Corky" Height="350" Width="525">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="30*" />
-            <ColumnDefinition Width="349*" />
-            <ColumnDefinition Width="30*" />
-        </Grid.ColumnDefinitions>
-        <Image Margin="12,12,16,71" Name="imgPhoto"
-        Stretch="Fill" Grid.Column="1" />
-        <Button Height="23" HorizontalAlignment="Left"
-        Margin="12,0,0,34" Name="btnLoad" VerticalAlignment="Bottom"
-        Width="75" Grid.Column="1" Click="btnLoad_Click">_Load</Button>
-    </Grid>
+        Title="Corky" Height="600" Width="1000">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+
+		<Image Margin="12,12,16,71" Name="imgPhoto"
+		       Stretch="Uniform" Grid.Column="0" Grid.Row="0" />
+		<Button Height="23" HorizontalAlignment="Left"
+		        Margin="12,0,0,34" Name="btnLoad" VerticalAlignment="Bottom"
+		        Grid.Column="0" Grid.Row="1" Click="btnLoad_Click">
+			Upload image
+		</Button>
+
+		<Image Source="{Binding WineImageUri}" Grid.Column="1" Grid.Row="0" />
+	</Grid>
 </Window>
