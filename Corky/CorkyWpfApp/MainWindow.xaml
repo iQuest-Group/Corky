@@ -17,5 +17,6 @@
         <Button Height="23" HorizontalAlignment="Left"
         Margin="12,0,0,34" Name="btnLoad" VerticalAlignment="Bottom"
         Width="75" Grid.Column="1" Click="btnLoad_Click">_Load</Button>
+        <Grid Name="imgGrid" Grid.Column="1"></Grid>
     </Grid>
 </Window>
