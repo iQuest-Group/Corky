@@ -5,5 +5,5 @@
 
 bin/
 obj/
-Corky/Corky/App.config
 Corky/packages
+Corky/CorkyWpfApp/App.config

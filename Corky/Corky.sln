@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corky", "Corky\Corky.csproj", "{E1A4D59D-5EE8-4018-B6BB-D8BBF2B555C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomVision", "Corky\CustomVision.csproj", "{E1A4D59D-5EE8-4018-B6BB-D8BBF2B555C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorkyWpfApp", "CorkyWpfApp\CorkyWpfApp.csproj", "{8F9E4977-D3D8-40A7-A511-A3840DAE6852}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{E1A4D59D-5EE8-4018-B6BB-D8BBF2B555C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1A4D59D-5EE8-4018-B6BB-D8BBF2B555C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1A4D59D-5EE8-4018-B6BB-D8BBF2B555C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F9E4977-D3D8-40A7-A511-A3840DAE6852}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F9E4977-D3D8-40A7-A511-A3840DAE6852}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F9E4977-D3D8-40A7-A511-A3840DAE6852}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F9E4977-D3D8-40A7-A511-A3840DAE6852}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

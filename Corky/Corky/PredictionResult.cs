@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Corky
+namespace CustomVision
 {
     public class PredictionResult
     {

@@ -3,11 +3,11 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace Corky
+namespace CustomVision
 {
     public class CustomVisionPredictionService
     {
-        private static readonly string _apiUri = "https://southcentralus.api.cognitive.microsoft.com/customvision/v2.0/Prediction/{0}/image";
+        private static readonly string _apiUri = "https://southcentralus.api.cognitive.microsoft.com/customvision/v2.0/Prediction/{0}/image?iterationId=e9fcedc4-f5eb-4f1f-b76a-594f3782ef42";
 
         public static async Task<PredictionResult> PredictImage(byte[] byteData)
         {
@@ -21,7 +21,7 @@ namespace Corky
         private static async Task<string> MakeRequest(byte[] byteData)
         {
             var client = new HttpClient();
-            client.DefaultRequestHeaders.Add("Prediction-key", CustomVisionSettings.PredictionKey);
+            client.DefaultRequestHeaders.Add("Prediction-Key", CustomVisionSettings.PredictionKey);
 
             using (var content = new ByteArrayContent(byteData))
             {

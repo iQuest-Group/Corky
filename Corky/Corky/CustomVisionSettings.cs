@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace Corky
+namespace CustomVision
 {
     public static class CustomVisionSettings
     {
