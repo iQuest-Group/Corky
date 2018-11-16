@@ -20,7 +20,13 @@ namespace CorkyWpfApp
 
 		public static async Task<string> GetPredictedWinePictureUrl(PredictionResult winePrediction)
 		{
-			string wineTag = GetMostDominantWineTag(winePrediction);
+			IEnumerable<Prediction> validPredictions = winePrediction.Predictions.Where(x => x.Probability > 0.4);
+			if (!validPredictions.Any())
+			{
+				return "https://i.pinimg.com/originals/3c/4e/65/3c4e650ad01f42649349ea2b7ea7d235.jpg";
+			}
+
+			string wineTag = GetMostDominantWineTag(validPredictions);
 			return await RandomWineBottleImageUriBasedOnTag(wineTag);
 		}
 
@@ -28,10 +34,10 @@ namespace CorkyWpfApp
 
 		#region Private Methods
 
-		private static string GetMostDominantWineTag(PredictionResult winePrediction)
+		private static string GetMostDominantWineTag(IEnumerable<Prediction> validPredictions)
 		{
-			IEnumerable<IGrouping<string, Prediction>> predictionGroupByName =
-				winePrediction.Predictions.Where(x => x.Probability > 0.4).GroupBy(x => x.TagName);
+			IEnumerable<IGrouping<string, Prediction>> predictionGroupByName = validPredictions.GroupBy(x => x.TagName);
+
 			return predictionGroupByName.OrderByDescending(x => x.Count()).First().Key;
 		}
 
