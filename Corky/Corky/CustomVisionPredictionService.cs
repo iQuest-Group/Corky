@@ -7,7 +7,7 @@ namespace CustomVision
 {
     public class CustomVisionPredictionService
     {
-        private static readonly string _apiUri = "https://southcentralus.api.cognitive.microsoft.com/customvision/v2.0/Prediction/{0}/image?iterationId=e9fcedc4-f5eb-4f1f-b76a-594f3782ef42";
+        private static readonly string _apiUri = "https://southcentralus.api.cognitive.microsoft.com/customvision/v2.0/Prediction/{0}/image";
 
         public static async Task<PredictionResult> PredictImage(byte[] byteData)
         {
